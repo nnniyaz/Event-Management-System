@@ -1,4 +1,4 @@
-# event
+# Event Management System
 
 a [Sails v1](https://sailsjs.com) application
 
