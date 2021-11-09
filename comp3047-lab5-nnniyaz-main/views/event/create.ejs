@@ -1,0 +1,124 @@
+<!-- create.ejs -->
+<br>
+<form action="/event/create" method="post" class="flex-container">
+    <div class="columns">
+        <div class="column is-four-fifths">
+
+            <div class="field">
+                <label class="label">Event Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="eventName" placeholder="Event Name" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Short Desciption</label>
+                <div class="control">
+                    <input class="input" type="text" name="shortDescription" placeholder="Short Description" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Long Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="longDescription" placeholder="Long description"></textarea>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Image Url</label>
+                <div class="control">
+                    <input class="input is-link" type="text" name="imgUrl" placeholder="URL" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Organizer</label>
+                <div class="control">
+                    <div class="select">
+                        <select style="width: 400px;" name="organizer" required>
+                            <option selected disabled>Select organization</option>
+                            <option value="Department of Computer Science">Department of Computer Science</option>
+                            <option value="Department of Economics">Department of Economics</option>
+                            <option value="Department of Accountancy & Law">Department of Accountancy & Law</option>
+                            <option value="Department Marketing">Department Marketing</option>
+                            <option value="Department Finance & Decision Science">Department Finance & Decision
+                                Science
+                            </option>
+                            <option value="Department of Management">Department of Management</option>
+                            <option value="Music Society">Music Society</option>
+                            <option value="Student Union">Student Union</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="column is-four-fifths">
+
+            <div class="field">
+                <label class="label">Event Date</label>
+                <div class="control">
+                    <input class="input" name="eventDate" type="date" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Start Time</label>
+                <div class="control">
+                    <input class="input" name="startTime" type="time" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">End Time</label>
+                <div class="control">
+                    <input class="input" name="endTime" type="time" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Venue</label>
+                <div class="control">
+                    <div class="select">
+                        <select style="width: 400px;" name="venue" required>
+                            <option selected disabled>Select venue</option>
+                            <option value="ZOOM">ZOOM</option>
+                            <option value="AAB">AAB</option>
+                            <option value="WLB">WLB</option>
+                            <option value="DLB">DLB</option>
+                            <option value="LT3">LT3</option>
+                            <option value="FSC">FSC</option>
+                            <option value="SHSH">SHSH</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Quota</label>
+                <div class="control">
+                    <input class="input" type="text" name="quota" placeholder="Quota" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" name="highlightEvent">
+                        Highlight Event
+                    </label>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,117 @@
+<!-- home.ejs -->
+<br>
+<style>
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .grid2x2 {
+        min-height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .grid2x2>div {
+        display: flex;
+        flex-basis: calc(50% - 40px);
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .grid2x2>div>div {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    #cover {
+        width: 800px;
+        height: 800px;
+        margin: 0 auto;
+    }
+
+    #cover>img {
+        float: left;
+        border: 2px solid black;
+        width: 45%;
+        margin: 1.66%;
+    }
+</style>
+
+<!-- <body>
+    <div class="grid2x2">
+        <% events.forEach( function(event) { %>
+            <div class="box box1">
+                <div class="columns">
+                    <div class="column">
+                        <div class="card is-flex">
+                            <div>
+                                <div class="card-image">
+                                    <figure>
+                                        <img src="<%= event.imgUrl %>" width="300" height="300">
+                                    </figure>
+                                </div>
+                            </div>
+                            <div>
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        <%= event.eventName %>
+                                    </p>
+                                    <button class="card-header-icon" aria-label="more options">
+                                        <span class="icon">
+                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </header>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <%= event.shortDescription %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+    </div>
+</body> -->
+<div class="columns is-multiline is-centered">
+    <% events.forEach( function(event) { %>
+        <div class="column is-narrow">
+            <p class="bd-notification is-primary">
+
+            <div class="card">
+                <div class="card-content is-flex is-flex-direction-row">
+                    <div class="card-image">
+                        <figure>
+                            <img src="<%= event.imgUrl %>" width="400" height="350"> 
+                        </figure>
+                    </div>
+                    <div class="container" style="margin: 3px;">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                <%= event.eventName %>
+                            </p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </header>
+
+
+                        <div class="content is-centered">
+                            <%= event.shortDescription %>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            </p>
+        </div>
+        <% }); %>
+</div>

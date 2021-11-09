@@ -1,0 +1,136 @@
+<!-- update.ejs -->
+<br>
+<form action="/event/update/<%= event.id %>" method="post" class="flex-container">
+    <div class="columns">
+        <div class="column is-four-fifths">
+
+            <div class="field">
+                <label class="label">Event Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="eventName" placeholder="Event Name"
+                        value="<%= event.eventName %>" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Short Desciption</label>
+                <div class="control">
+                    <input class="input" type="text" name="shortDescription" placeholder="Short Description"
+                        value="<%= event.shortDescription %>" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Long Description</label>
+                <div class="control">
+                    <textarea class="textarea" name="longDescription"
+                        placeholder="Long description"><%= event.longDescription %></textarea>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Image Url</label>
+                <div class="control">
+                    <input class="input is-link" type="text" name="imgUrl" placeholder="URL" value="<%= event.imgUrl %>"
+                        required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Organizer</label>
+                <div class="control">
+                    <div class="select">
+                        <select style="width: 400px;" name="organizer" required>
+                            <option value="<%= event.organizer %>" selected>Select organization</option>
+                            <option value="Department of Computer Science">Department of Computer Science</option>
+                            <option value="Department of Economics">Department of Economics</option>
+                            <option value="Department of Accountancy & Law">Department of Accountancy & Law</option>
+                            <option value="Department Marketing">Department Marketing</option>
+                            <option value="Department Finance & Decision Science">Department Finance & Decision
+                                Science</option>
+                            <option value="Department of Management">Department of Management</option>
+                            <option value="Music Society">Music Society</option>
+                            <option value="Student Union">Student Union</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column is-four-fifths">
+
+            <div class="field">
+                <label class="label">Event Date</label>
+                <div class="control">
+                    <input class="input" name="eventDate" type="date" value="<%= event.eventDate %>" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Start Time</label>
+                <div class="control">
+                    <input class="input" name="startTime" type="time" value="<%= event.startTime %>" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">End Time</label>
+                <div class="control">
+                    <input class="input" name="endTime" type="time" value="<%= event.endTime %>" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Venue</label>
+                <div class="control">
+                    <div class="select">
+                        <select style="width: 400px;" name="venue" required>
+                            <option value="<%= event.venue %>" selected>
+                                <%= event.venue %>
+                            </option>
+                            <option value="ZOOM">ZOOM</option>
+                            <option value="AAB">AAB</option>
+                            <option value="WLB">WLB</option>
+                            <option value="DLB">DLB</option>
+                            <option value="LT3">LT3</option>
+                            <option value="FSC">FSC</option>
+                            <option value="SHSH">SHSH</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Quota</label>
+                <div class="control">
+                    <input class="input" type="text" name="quota" placeholder="Quota" value="<%= event.quota %>"
+                        required>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" name="highlightEvent" <%=event.highlightEvent=="on" ? "checked" : '' %>>
+                        Highlight Event
+                    </label>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+<br>
+<p class="control">
+<form class="d-inline" action="/event/delete/<%= event.id %>" method="POST">
+    <a href="/event/admin/">
+        <input type="submit" value="Delete" class="button is-danger">
+    </a>
+</form>
+</p>

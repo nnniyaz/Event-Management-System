@@ -1,0 +1,96 @@
+<!-- read.ejs -->
+<center>
+    <div class="column is-centered">
+        <div class="column is-half">
+            <table class="table">
+                <% if(req.params.id==event.id) { %>
+
+                    <tbody>
+                        <tr>
+                            <img src="<%= event.imgUrl %>" width="600" height="400">
+                        </tr>
+                        <tr>
+                            <th>Event ID</th>
+                            <td class="data-cell">
+                                <%= event.id %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Event Name</th>
+                            <td class="data-cell">
+                                <%= event.eventName %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Short Description</th>
+                            <td class="data-cell">
+                                <%= event.shortDescription %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Long Description</th>
+                            <td class="data-cell">
+                                <%= event.longDescription %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Organizer</th>
+                            <td class="data-cell">
+                                <%= event.organizer %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Event Date</th>
+                            <td class="data-cell">
+                                <%= event.eventDate %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Start Time</th>
+                            <td class="data-cell">
+                                <%= event.startTime %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>End Time</th>
+                            <td class="data-cell">
+                                <%= event.endTime %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Venue</th>
+                            <td class="data-cell">
+                                <%= event.venue %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Quota</th>
+                            <td class="data-cell">
+                                <%= event.quota %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Highlight Event</th>
+                            <td class="data-cell">
+                                <%= event.highlightEvent %>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <% }; %>
+            </table>
+            <div class="field is-grouped is-grouped-centered">
+                <p class="control">
+                    <a href="/event/update/<%= event.id %>" class="button is-dark">Edit</a>
+                </p>
+                <!-- <p class="control">
+                    <form class="d-inline" action="/event/delete/<%= event.id %>" method="POST">
+                        <a href="/event/admin/">
+                            <input type="submit" value="Delete" class="button is-danger">
+                        </a>
+                    </form>
+                </p> -->
+            </div>
+        </div>
+    </div>
+</center>
